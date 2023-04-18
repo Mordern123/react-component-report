@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/league.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-background="https://d2ms8rpfqc4h24.cloudfront.net/React_18_New_features_a9ebb05f34.jpg"
+        >
+          <h2
+            style="
+              background-color: rgba(0, 0, 0, 0.92);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            React學習心得
+          </h2>
+          <p
+            style="
+              background-color: rgba(0, 0, 0, 0.92);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            Eric.Yang
+          </p>
+        </section>
+
+        <section>
+          <h3>開始接觸React，會遇到的選擇</h3>
+          <div style="display: flex; justify-content: space-around; color: #70d3e0;">
+            <p class="fragment fade-up">Class</p>
+            <p class="fragment fade-up">Functional</p>
+          </div>
+          <img src="https://language.chinadaily.com.cn/images/attachement/jpg/site1/20180418/64006a47a40a1c40db9701.jpg" alt="" style="width: 50%;">
+        </section>
+
+        <section>
+          <h3 style="font-weight: bold;">React的歷史</h3>
+          <p class="fragment highlight-blue">
+            一開始，class的寫法是React的主流
+          </p>
+          <p class="fragment highlight-blue">舊版官方文件、歷史較久的專案</p>
+          <p class="fragment highlight-blue">React釋出v16.8</p>
+          <p class="fragment highlight-blue">神奇鉤子(Hooks)</p>
+          <p class="fragment highlight-blue">讓React使用Functional也可以管理state</p>
+          <p class="fragment highlight-blue">
+            新版官方文件，官方推薦使用functional
+          </p>
+        </section>
+
+        <section>
+          <h3 style="font-weight: bold;">為什麼? Class本來就能做到呀!!!</h3>
+          <ul>
+            <li class="fragment">編譯速度較快</li>
+            <li class="fragment">相依性較低</li>
+            <li class="fragment">可測試性及重用性高</li>
+            <li class="fragment">較為簡單、易於理解、降低開發成本</li>
+            <li class="fragment">更多的社群資源</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3 style="font-weight: bold;">Class表示：我也不是一無是處!</h3>
+          <ul>
+            <li class="fragment">可能具有好的可讀性(明確的生命週期)</li>
+            <li class="fragment">可以支援舊版React</li>
+            <li class="fragment">更好的 IDE 支持</li>
+          </ul>
+        </section>
+
+        <section>
+          <pre>
+            <code data-trim data-noescape>
+                (def lazy-fib
+                  (concat
+                  [0 1]
+                  ((fn rfib [a b]
+                    (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+            </code>
+          </pre>
+          <pre>
+            <code data-trim data-noescape>
+                (def lazy-fib
+                  (concat
+                  [0 1]
+                  ((fn rfib [a b]
+                    (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+            </code>
+          </pre>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
