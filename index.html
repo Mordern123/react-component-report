@@ -44,29 +44,37 @@
 
         <section>
           <h3>開始接觸React，會遇到的選擇</h3>
-          <div style="display: flex; justify-content: space-around; color: #70d3e0;">
+          <div
+            style="display: flex; justify-content: space-around; color: #70d3e0"
+          >
             <p class="fragment fade-up">Class</p>
             <p class="fragment fade-up">Functional</p>
           </div>
-          <img src="https://language.chinadaily.com.cn/images/attachement/jpg/site1/20180418/64006a47a40a1c40db9701.jpg" alt="" style="width: 50%;">
+          <img
+            src="https://language.chinadaily.com.cn/images/attachement/jpg/site1/20180418/64006a47a40a1c40db9701.jpg"
+            alt=""
+            style="width: 50%"
+          />
         </section>
 
         <section>
-          <h3 style="font-weight: bold;">React的歷史</h3>
+          <h3 style="font-weight: bold">React的歷史</h3>
           <p class="fragment highlight-blue">
             一開始，class的寫法是React的主流
           </p>
           <p class="fragment highlight-blue">舊版官方文件、歷史較久的專案</p>
           <p class="fragment highlight-blue">React釋出v16.8</p>
           <p class="fragment highlight-blue">神奇鉤子(Hooks)</p>
-          <p class="fragment highlight-blue">讓React使用Functional也可以管理state</p>
+          <p class="fragment highlight-blue">
+            讓React使用Functional也可以管理state
+          </p>
           <p class="fragment highlight-blue">
             新版官方文件，官方推薦使用functional
           </p>
         </section>
 
         <section>
-          <h3 style="font-weight: bold;">為什麼? Class本來就能做到呀!!!</h3>
+          <h3 style="font-weight: bold">為什麼? Class本來就能做到呀!!!</h3>
           <ul>
             <li class="fragment">編譯速度較快</li>
             <li class="fragment">相依性較低</li>
@@ -77,7 +85,7 @@
         </section>
 
         <section>
-          <h3 style="font-weight: bold;">Class表示：我也不是一無是處!</h3>
+          <h3 style="font-weight: bold">Class表示：我也不是一無是處!</h3>
           <ul>
             <li class="fragment">可能具有好的可讀性(明確的生命週期)</li>
             <li class="fragment">可以支援舊版React</li>
@@ -86,25 +94,199 @@
         </section>
 
         <section>
+          <h3>渲染JSX方法</h3>
+          <p>Class component:</p>
           <pre>
-            <code data-trim data-noescape>
-                (def lazy-fib
-                  (concat
-                  [0 1]
-                  ((fn rfib [a b]
-                    (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+            <code data-trim data-noescape data-line-numbers="2-7">
+              <script type="text/template">
+                import React, { Component } from "react";
+
+                class ClassComponent extends Component { 
+                  render() { 
+                    return <div>ClassComponent</div>;
+                  }
+                }
+              </script>
             </code>
           </pre>
+          <p>Functional component:</p>
           <pre>
-            <code data-trim data-noescape>
-                (def lazy-fib
-                  (concat
-                  [0 1]
-                  ((fn rfib [a b]
-                    (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+            <code data-trim data-noescape data-line-numbers="3-5">
+              <script type="text/template">
+                import React from "react";
+
+                const FunctionalComponent = () => {
+                  return <div>FunctionalComponent</div>;
+                };
+              </script>
             </code>
           </pre>
         </section>
+
+        <section>
+          <h3>State</h3>
+          <p>Class component:</p>
+          <pre>
+            <code data-trim data-noescape data-line-numbers="4, 8, 12">
+              <script type="text/template">
+                class Hello extends React.Component {  
+                  constructor(props) {
+                    super(props);       
+                    this.state = { food: "apple", };
+                  }    
+                  render() {       
+                    return ( 
+                      <h1> Hello, {this.state.food} </h1> 
+                    );   
+                  }
+                }
+                this.setState({food: 'banana'});
+              </script>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h3>State</h3>
+          <p>Functional component:</p>
+          <pre>
+            <code data-trim data-noescape data-line-numbers="4, 8">
+              <script type="text/template">
+                import React, { useState } from 'react';
+
+                const Hello = () => { 
+                  const [count, setCount] = useState(0);
+                  return (        
+                    <div>
+                      <p>clicked {count} times</p> 
+                      <button onClick={() => setCount(count + 1)}> Hook</button>
+                    </div>  
+                  );
+                }
+              </script>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h3>Props</h3>
+          <p>Class component:</p>
+          <pre>
+            <code data-trim data-noescape data-line-numbers="4, 8">
+              <script type="text/template">
+                export default class TestButton extends Component {
+
+                  constructor(props) {
+                    super(props);
+                    this.state = {
+                      text: hello
+                    };
+                  }
+                  
+                  onClick = () => {
+                    const {test} = this.props;
+                    this.setState({text: "hello react"});
+                  };
+                }
+              </script>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h3>Props</h3>
+          <p>Functional component:</p>
+          <pre>
+            <code data-trim data-noescape data-line-numbers="4, 8">
+              <script type="text/template">
+                const Score = ({ score, maxScore }) => {
+                  return (
+                    <div>
+                        <div>{`獲得蘋果： ${score}`}</div>
+                        <div>{`最高紀錄： ${maxScore}`}</div>
+                    </div>
+                  )
+                }
+                export default Score;
+              </script>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h4 style="font-weight: bold;">生命週期</h4>
+          <p>Functional component:</p>
+          <p style="font-size: 22px; color: beige;">沒有生命週期，由Hooks所代替</p>
+          <p>Class component:</p>
+          <img src="https://i.imgur.com/Ib5gpFY.jpg">
+        </section>
+
+        <section>
+          <img
+            src="https://miro.medium.com/max/1400/1*Ph-iXMJz7gYwvYDdPyXxxA.png"
+            alt=""
+          />
+        </section>
+
+        <section>
+          <h3>Pure Component</h3>
+        </section>
+
+        <section>
+          <h3>Class to Functional</h3>
+          <pre>
+            <code data-trim data-noescape data-line-numbers="1|2|3-9|12|13-14|15-22|27|28|28,38|29-31|33-40">
+              <script type="text/template">
+                import React, {Component} from "react";
+                export default class EricYC extends Component {
+                  constructor(props) {
+                    super(props);
+                    this.state = {
+                      name: "",
+                      age: 25,
+                      height: 176,
+                    };
+                  }
+
+                  render() {
+                    const { name, age, height } = this.state;
+                    const { isMale } = this.props;
+                    return (
+                      <div>
+                        <h3>My name is { name }</h3>
+                        <p>I am { age } years old</p>
+                        <p>I am { height } cm</p>
+                        <p>I am a { isMale? "Male": "Female" }</p>
+                      </div>  
+                    );
+                  }
+                }
+
+                // to Functional
+                import {useState} from "react";
+                const EricYC = ({isMale}) => {
+                  const [name, setName] = useState("");
+                  const [age, setAge] = useState(25);
+                  const [height, setHeight] = useState(176);
+
+                  return (
+                    <div>
+                      <h3>My name is { name }</h3>
+                      <p>I am { age } years old</p>
+                      <p>I am { height } cm</p>
+                      <p>I am a { isMale? "Male": "Female" }</p>
+                    </div>  
+                  )
+                }
+              </script>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <img src="./compare.jpg" alt="">
+        </section>
+
       </div>
     </div>
 
