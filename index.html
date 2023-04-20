@@ -43,6 +43,31 @@
         </section>
 
         <section>
+          <h3>開發環境建置</h3>
+          <p>若是要寫一個 React 的 SPA 網頁，我們會仰賴各種第三方 library 來處理各種基本功能</p>
+          <ul>
+            <li>Babel：編譯 ES6+ 讓瀏覽器看懂</li>
+            <li>Webpack：打包資源與程式碼</li>
+            <li>eslint：檢查程式碼</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>開發環境建置</h3>
+          <p>
+            但是每個套件背後都是一個全新的世界，如果每個都要自己設定(尤其是 Webpack)，那專案可能要延後很久才開始，同時，讓新手失去耐心的，往往不是寫code，而是環境建置
+            ，現在各種 React 專案環境的需求大同小異，要能編譯，要能打包，要能檢查 lint，只有商業邏輯的差異比較大，那既然大家都差不多，怎麼沒有一個「模板」可以直接一鍵生成呢？
+          </p>
+          <p class="fragment">Create-React-App</p>
+        </section>
+
+        <section>
+          <p>Create-React-App</p>
+          <p>是一個由 Facebook 開發維護的 toolchain，React 官網推薦
+            ，用來快速建立一個 pre-configured React 專案。前端的開發環境、打包設定，Babel、Webpack、Jest，都已經處理好了，你只要認真開發程式就可以了。</p>
+        </section>
+
+        <section>
           <h3>開始接觸React，會遇到的選擇</h3>
           <div
             style="display: flex; justify-content: space-around; color: #70d3e0"
@@ -214,6 +239,22 @@
         </section>
 
         <section>
+          <h3>Pure Component</h3>
+          <p>在Class Component中</p>
+          <p>繼承的Component通過shouldComponentUpdate來判斷是否需要re-render。</p>
+          <p>如果return true，component將會重新渲染。</p>
+          <p>默認情況皆是true!!!效能不佳</p>
+          <p>Pure Component實現在shouldComponentUpdate時，透過淺層比較來判斷是否需要重新渲染</p>
+          <p>有效減少無意義的re-render</p>
+        </section>
+
+        <section>
+          <h3>Pure Component</h3>
+          <p>在Functional Component中</p>
+          <p>因沒有辦法extends PureComponent，會透過memo來達到一樣的效果。</p>
+        </section>
+
+        <section>
           <h4 style="font-weight: bold;">生命週期</h4>
           <p>Functional component:</p>
           <p style="font-size: 22px; color: beige;">沒有生命週期，由Hooks所代替</p>
@@ -227,11 +268,7 @@
             alt=""
           />
         </section>
-
-        <section>
-          <h3>Pure Component</h3>
-        </section>
-
+        
         <section>
           <h3>Class to Functional</h3>
           <pre>
