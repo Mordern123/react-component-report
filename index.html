@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>Eric Report</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -15,6 +15,21 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <style>
+      ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #70d3e0;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+        background-color: black;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #2ebbce;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
@@ -43,28 +58,76 @@
         </section>
 
         <section>
-          <h3>開發環境建置</h3>
-          <p>若是要寫一個 React 的 SPA 網頁，我們會仰賴各種第三方 library 來處理各種基本功能</p>
+          <img
+            src="https://i0.wp.com/tech.shaadi.com/wp-content/uploads/2022/08/React_babel-1.jpg?fit=1920%2C799&ssl=1"
+            alt=""
+            style="
+              width: 50%;
+              position: absolute;
+              top: -150px;
+              left: 230px;
+              z-index: -1;
+              opacity: 70%;
+            "
+          />
+          <h3
+            style="
+              background-color: rgba(0, 0, 0, 0.5);
+              color: #fff;
+              padding: 20px;
+            "
+          >
+            開發環境建置
+          </h3>
+          <p style="text-align: left">
+            若寫一個 React 的 SPA 網頁，依賴各種第三方 library
+            來處理各種基本功能。
+          </p>
           <ul>
-            <li>Babel：編譯 ES6+ 讓瀏覽器看懂</li>
-            <li>Webpack：打包資源與程式碼</li>
-            <li>eslint：檢查程式碼</li>
+            <li style="color: #97e5f0">
+              Babel： <span style="color: #caeef3">編譯 ES6+ 讓瀏覽器看懂</span>
+            </li>
+            <li style="color: #97e5f0">
+              Webpack：<span style="color: #caeef3">打包資源與程式碼</span>
+            </li>
+            <li style="color: #97e5f0">
+              eslint：<span style="color: #caeef3">檢查程式碼</span>
+            </li>
           </ul>
         </section>
 
         <section>
           <h3>開發環境建置</h3>
           <p>
-            但是每個套件背後都是一個全新的世界，如果每個都要自己設定(尤其是 Webpack)，那專案可能要延後很久才開始，同時，讓新手失去耐心的，往往不是寫code，而是環境建置
-            ，現在各種 React 專案環境的需求大同小異，要能編譯，要能打包，要能檢查 lint，只有商業邏輯的差異比較大，那既然大家都差不多，怎麼沒有一個「模板」可以直接一鍵生成呢？
+            但是每個套件背後都是一個全新的世界，如果每個都要自己設定(尤其是
+            Webpack)，那專案可能要延後很久才開始，同時，讓新手失去耐心的，往往不是寫code，而是環境建置
+            ，現在各種 React
+            專案環境的需求大同小異，要能編譯，要能打包，要能檢查
+            lint，只有商業邏輯的差異比較大，那既然大家都差不多，怎麼沒有一個「模板」可以直接一鍵生成呢？
           </p>
-          <p class="fragment">Create-React-App</p>
+          <p
+            class="fragment"
+            style="
+              position: absolute;
+              right: 300px;
+              top: 150px;
+              background-color: rgba(0, 0, 0, 0.9);
+              color: #fff;
+              padding: 20px;
+              color: #97e5f0;
+            "
+          >
+            Create-React-App
+          </p>
         </section>
 
         <section>
           <p>Create-React-App</p>
-          <p>是一個由 Facebook 開發維護的 toolchain，React 官網推薦
-            ，用來快速建立一個 pre-configured React 專案。前端的開發環境、打包設定，Babel、Webpack、Jest，都已經處理好了，你只要認真開發程式就可以了。</p>
+          <p>
+            是一個由 Facebook 開發維護的 toolchain，React 官網推薦
+            ，用來快速建立一個 pre-configured React
+            專案。前端的開發環境、打包設定，Babel、Webpack、Jest，都已經處理好了，你只要認真開發程式就可以了。
+          </p>
         </section>
 
         <section>
@@ -80,6 +143,117 @@
             alt=""
             style="width: 50%"
           />
+        </section>
+
+        <section>
+          <section>
+            <h3 style="margin: 0;">React的歷史</h3>
+            <div style="display: flex; flex-direction: column">
+              <div style="display: flex; align-items: center">
+                <p
+                  style="
+                    border-radius: 50%;
+                    background-color: #70d3e0;
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    font-size: 22px;
+                    align-items: center;
+                    line-height: 60px;
+                  "
+                >
+                  2013
+                </p>
+              </div>
+              <div style="padding: 0 30px">
+                <div style="border-left: 2px solid #70d3e0;">
+                  <p
+                    style="
+                      font-size: 28px;
+                      padding: 0;
+                      margin: 0;
+                      margin-bottom: 10px;
+                      color: #caeef3;
+                    "
+                  >
+                    React 的出現
+                  </p>
+                  <p style="font-size: 22px; padding: 0; margin: 0;">
+                    最初的靈感來自 XHP，由Facebook發布的JS library。</br>
+                    一開始，class component 的寫法是 React 的主流(舊版官方文件、歷史較久的專案)。
+                  </p>
+                </div>
+              </div>
+              <div class="fragment" style="display: flex; align-items: center">
+                <p
+                  style="
+                    border-radius: 50%;
+                    background-color: #70d3e0;
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    font-size: 22px;
+                    align-items: center;
+                    line-height: 60px;
+                  "
+                >
+                  2019
+                </p>
+              </div>
+              <div class="fragment" style="padding: 0 30px">
+                <div style="border-left: 2px solid #70d3e0;">
+                  <p
+                    style="
+                      font-size: 28px;
+                      padding: 0;
+                      margin: 0;
+                      margin-bottom: 10px;
+                      color: #caeef3;
+                    "
+                  >
+                    React 16.8 (Hooks)
+                  </p>
+                  <p style="font-size: 22px; padding: 0; margin: 0;">
+                    神奇鉤子的出現，讓React使用Functional也可以管理state
+                  </p>
+                </div>
+              </div>
+              <div class="fragment" style="display: flex; align-items: center">
+                <p
+                  style="
+                    border-radius: 50%;
+                    background-color: #70d3e0;
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    font-size: 22px;
+                    align-items: center;
+                    line-height: 60px;
+                  "
+                >
+                  2023
+                </p>
+              </div>
+              <div class="fragment" style="padding: 0 30px">
+                <div style="border-left: 2px solid #70d3e0;">
+                  <p
+                    style="
+                      font-size: 28px;
+                      padding: 0;
+                      margin: 0;
+                      margin-bottom: 10px;
+                      color: #caeef3;
+                    "
+                  >
+                    React 更新官方文件
+                  </p>
+                  <p style="font-size: 22px; padding: 0; margin: 0;">
+                    改為使用Functional Component作為主要介紹的方法。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
 
         <section>
@@ -154,18 +328,27 @@
           <pre>
             <code data-trim data-noescape data-line-numbers="4, 8, 12">
               <script type="text/template">
-                class Hello extends React.Component {  
+                class Hello extends Component {
                   constructor(props) {
-                    super(props);       
-                    this.state = { food: "apple", };
-                  }    
-                  render() {       
-                    return ( 
-                      <h1> Hello, {this.state.food} </h1> 
-                    );   
+                    super(props);
+                    this.state = {
+                      food: 'apple'
+                    };
+                  }
+                
+                  handleFoodChange = () => {
+                    this.setState({ food: 'banana' });
+                  };
+                
+                  render() {
+                    return (
+                      <div>
+                        <h1>Hello, {this.state.food}</h1>
+                        <button onClick={this.handleFoodChange}>Change</button>
+                      </div>
+                    );
                   }
                 }
-                this.setState({food: 'banana'});
               </script>
             </code>
           </pre>
@@ -177,15 +360,18 @@
           <pre>
             <code data-trim data-noescape data-line-numbers="4, 8">
               <script type="text/template">
-                import React, { useState } from 'react';
-
-                const Hello = () => { 
-                  const [count, setCount] = useState(0);
-                  return (        
+                const Hello = () => {
+                  const [food, setFood] = useState("apple");
+                
+                  const handleFoodChange = () => {
+                    setFood('banana');
+                  };
+                
+                  return (
                     <div>
-                      <p>clicked {count} times</p> 
-                      <button onClick={() => setCount(count + 1)}> Hook</button>
-                    </div>  
+                      <h1>Hello, {food}</h1>
+                      <button onClick={handleFoodChange}>Change</button>
+                    </div>
                   );
                 }
               </script>
@@ -199,20 +385,21 @@
           <pre>
             <code data-trim data-noescape data-line-numbers="4, 8">
               <script type="text/template">
-                export default class TestButton extends Component {
-
+                class Score extends Component {
                   constructor(props) {
                     super(props);
-                    this.state = {
-                      text: hello
-                    };
                   }
-                  
-                  onClick = () => {
-                    const {test} = this.props;
-                    this.setState({text: "hello react"});
-                  };
+                  render() {
+                    const { score, maxScore } = this.props;
+                    return (
+                      <div>
+                        <div>{`獲得蘋果： ${score}`}</div>
+                        <div>{`最高紀錄： ${maxScore}`}</div>
+                      </div>
+                    );
+                  }
                 }
+                export default Score;
               </script>
             </code>
           </pre>
@@ -241,10 +428,15 @@
         <section>
           <h3>Pure Component</h3>
           <p>在Class Component中</p>
-          <p>繼承的Component通過shouldComponentUpdate來判斷是否需要re-render。</p>
+          <p>
+            繼承的Component通過shouldComponentUpdate來判斷是否需要re-render。
+          </p>
           <p>如果return true，component將會重新渲染。</p>
           <p>默認情況皆是true!!!效能不佳</p>
-          <p>Pure Component實現在shouldComponentUpdate時，透過淺層比較來判斷是否需要重新渲染</p>
+          <p>
+            Pure
+            Component實現在shouldComponentUpdate時，透過淺層比較來判斷是否需要重新渲染
+          </p>
           <p>有效減少無意義的re-render</p>
         </section>
 
@@ -255,11 +447,13 @@
         </section>
 
         <section>
-          <h4 style="font-weight: bold;">生命週期</h4>
+          <h4 style="font-weight: bold">生命週期</h4>
           <p>Functional component:</p>
-          <p style="font-size: 22px; color: beige;">沒有生命週期，由Hooks所代替</p>
+          <p style="font-size: 22px; color: beige">
+            沒有生命週期，由Hooks所代替
+          </p>
           <p>Class component:</p>
-          <img src="https://i.imgur.com/Ib5gpFY.jpg">
+          <img src="https://i.imgur.com/Ib5gpFY.jpg" />
         </section>
 
         <section>
@@ -268,7 +462,7 @@
             alt=""
           />
         </section>
-        
+
         <section>
           <h3>Class to Functional</h3>
           <pre>
@@ -278,41 +472,56 @@
                 export default class EricYC extends Component {
                   constructor(props) {
                     super(props);
-                    this.state = {
-                      name: "",
-                      age: 25,
-                      height: 176,
-                    };
+                    this.state = { count: 0 };
                   }
-
+                
+                  componentDidMount() {
+                    console.log('Component has mounted');
+                  }
+                
+                  componentDidUpdate(prevProps, prevState) {
+                    if (this.state.count !== prevState.count) {
+                      console.log('Count has changed');
+                    }
+                  }
+                
+                  componentWillUnmount() {
+                    console.log('Component will unmount');
+                  }
+                
+                  handleIncrement() {
+                    this.setState({ count: this.state.count + 1 });
+                  }
+                
                   render() {
-                    const { name, age, height } = this.state;
-                    const { isMale } = this.props;
                     return (
                       <div>
-                        <h3>My name is { name }</h3>
-                        <p>I am { age } years old</p>
-                        <p>I am { height } cm</p>
-                        <p>I am a { isMale? "Male": "Female" }</p>
-                      </div>  
+                        <h1>Count: {this.state.count}</h1>
+                        <button onClick={() => this.handleIncrement()}>Increment</button>
+                      </div>
                     );
                   }
                 }
 
                 // to Functional
-                import {useState} from "react";
+                import {useState, useEffect} from "react";
                 const EricYC = ({isMale}) => {
-                  const [name, setName] = useState("");
-                  const [age, setAge] = useState(25);
-                  const [height, setHeight] = useState(176);
+                  const [count, setCount] = useState(0);
+
+                  useEffect(() => {
+                    console.log('Component has mounted');
+                    return () => console.log('Component will unmount');
+                  }, []);
+                
+                  useEffect(() => {
+                    console.log('Count has changed');
+                  }, [count]);
 
                   return (
                     <div>
-                      <h3>My name is { name }</h3>
-                      <p>I am { age } years old</p>
-                      <p>I am { height } cm</p>
-                      <p>I am a { isMale? "Male": "Female" }</p>
-                    </div>  
+                      <h1>Count: {count}</h1>
+                      <button onClick={() => setCount(count + 1)}>Increment</button>
+                    </div>
                   )
                 }
               </script>
@@ -321,9 +530,94 @@
         </section>
 
         <section>
-          <img src="./compare.jpg" alt="">
+          <img src="./compare.jpg" alt="" />
         </section>
 
+        <section>
+          <h3>撰寫上遇到的問題</h3>
+          <img src="./no_constructor.jpg" alt="" />
+          <p>沒有建構子竟然也可以拿到props!</p>
+        </section>
+
+        <section>
+          <section>
+            <h3>為什麼要寫super(props)?</h3>
+            <p>在JavaScript中，super會參照父類別的建構子。</p>
+            <p>並且在呼叫父類別的建構子後，才能在建構子中使用this</p>
+            <pre>
+              <code data-trim data-noescape >
+                class TestComponent extends React.Component {
+                  constructor(props) {
+                    // 🔴 這裡還不能用this
+                    super(props);
+                    // ✅ 這裡可以用了!!!
+                    this.state = { isOpen: true };
+                  }
+                }
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <pre>
+              <code data-trim data-noescape >
+                class FatherComponent {
+                  constructor(name) {
+                    this.name = name;
+                  }
+                }
+                
+                class SonComponent extends FatherComponent {
+                  constructor(name) {
+                    this.getSonName(); // 🔴 this.name還沒被定義
+                    super(name);
+                  }
+                  getSonName() {
+                    alert('My name is Eric!');
+                  }
+                }
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <h3>為什麼要帶入props?</h3>
+          <p>
+            帶入props到super是必須的，因為底層的React.Component建構子才能初始化this.props?
+          </p>
+          <p class="fragment">測時結果，竟然可以讀取到this.props!!!</p>
+          <p class="fragment">
+            事實上 在 React 呼叫你的建構子後，它也會馬上配置 props 到實例中
+          </p>
+          <p class="fragment">React 刻意設計的~</p>
+        </section>
+
+        <section>
+          <h3>可以只寫 super() 而不用寫 super(props) 嗎？</h3>
+          <p class="fragment">NO!!</p>
+          <p class="fragment">
+            React 的確會在你的建構子執行之後自行配置 this.props
+          </p>
+          <p class="fragment">
+            但是 this.props 從呼叫 super 到建構子的結尾仍然會是undefined
+          </p>
+          <pre class="fragment">
+            <code data-trim data-noescape >
+              constructor(props) {
+                super();
+                console.log(this.props); // 🔴 undefined
+              }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h3>Side Project</h3>
+          <p>nodejs: v16.20</p>
+          <p>React: v18.2 (Functional Component)</p>
+          <a href="https://mordern123.github.io/snake/">Go to the Snake Game</a>
+        </section>
       </div>
     </div>
 
