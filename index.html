@@ -94,14 +94,29 @@
               eslint：<span style="color: #caeef3">檢查程式碼</span>
             </li>
           </ul>
+          <div class="fragment fade-in-then-out" style="position: absolute; top: 0; background-color: rgba(0, 0, 0, 0.88); padding: 0 20px;box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
+            <p style="color: #97e5f0; font-weight: bold;">Babel: </p>
+            <p style="text-align: start;">Babel是一個 JavaScript 編譯器，用於將 ES6+ 語法轉換為向後兼容的版本。
+              讓使用者可以使用最新版本的 JavaScript，同時保持瀏覽器的相容性。
+              將這些新特性轉換為瀏覽器可以理解的 ES5 語法，實現編譯和部署。</p>
+          </div>
+          <div class="fragment fade-in-then-out" style="position: absolute; top: 0; background-color: rgba(0, 0, 0, 0.88); padding: 0 20px;box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
+            <p style="color: #97e5f0; font-weight: bold;">Webpack: </p>
+            <p style="text-align: start;">Webpack可以將前端應用程式中的所有資源（例如JavaScript、CSS、圖片等）作為模塊進行處理，
+              然後將它們打包成一個或多個較小的bundle，這些bundle可以在網頁上載入。
+              就是幫我們編譯我們的Preprocess成瀏覽器看得懂的內容然後打包成一包的完成檔案然後拿去server 上傳上去。</p>
+          </div>
+          <div class="fragment fade-in-then-out" style="position: absolute; top: 0; background-color: rgba(0, 0, 0, 0.88); padding: 0 20px;box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
+            <p style="color: #97e5f0; font-weight: bold;">eslint: </p>
+            <p style="text-align: start;">ESLint是一個JavaScript的linting工具，它可以靜態分析JavaScript代碼，並檢查其中的錯誤同時強制實施程式碼風格，
+              以確保代碼的一致性和可讀性，如：語法或是 coding style。</p>
+          </div>
         </section>
 
         <section>
           <h3>開發環境建置</h3>
           <p>
-            但是每個套件背後都是一個全新的世界，如果每個都要自己設定(尤其是
-            Webpack)，那專案可能要延後很久才開始，同時，讓新手失去耐心的，往往不是寫code，而是環境建置
-            ，現在各種 React
+            每個套件背後都是一個全新的世界，但現在各種 React
             專案環境的需求大同小異，要能編譯，要能打包，要能檢查
             lint，只有商業邏輯的差異比較大，那既然大家都差不多，怎麼沒有一個「模板」可以直接一鍵生成呢？
           </p>
@@ -109,15 +124,15 @@
             class="fragment"
             style="
               position: absolute;
-              right: 300px;
-              top: 150px;
+              right: 250px;
+              top: 70px;
               background-color: rgba(0, 0, 0, 0.9);
               color: #fff;
               padding: 20px;
               color: #97e5f0;
             "
           >
-            Create-React-App
+            Create-React-App (CRA)
           </p>
         </section>
 
@@ -128,6 +143,14 @@
             ，用來快速建立一個 pre-configured React
             專案。前端的開發環境、打包設定，Babel、Webpack、Jest，都已經處理好了，你只要認真開發程式就可以了。
           </p>
+        </section>
+
+        <section>
+          <p>CRA專案結構</p>
+          <p style="position: absolute; z-index: 1; background-color: rgba(112, 211, 224, 0.7); padding: 5px 10px; font-size: 22px;">
+            看不到webpack.config檔案!它放在 node_modules/react-scripts 底下。
+          </p>
+          <img src="https://i.imgur.com/995yHA2.png" alt="">
         </section>
 
         <section>
@@ -146,161 +169,161 @@
         </section>
 
         <section>
-          <section>
-            <h3 style="margin: 0;">React的歷史</h3>
-            <div style="display: flex; flex-direction: column">
-              <div style="display: flex; align-items: center">
+          <h3 style="margin: 0">React的歷史</h3>
+          <div style="display: flex; flex-direction: column">
+            <div style="display: flex; align-items: center">
+              <p
+                style="
+                  border-radius: 50%;
+                  background-color: #70d3e0;
+                  width: 60px;
+                  height: 60px;
+                  text-align: center;
+                  font-size: 22px;
+                  align-items: center;
+                  line-height: 60px;
+                "
+              >
+                2013
+              </p>
+            </div>
+            <div style="padding: 0 30px">
+              <div style="border-left: 2px solid #70d3e0">
                 <p
                   style="
-                    border-radius: 50%;
-                    background-color: #70d3e0;
-                    width: 60px;
-                    height: 60px;
-                    text-align: center;
-                    font-size: 22px;
-                    align-items: center;
-                    line-height: 60px;
+                    font-size: 28px;
+                    padding: 0;
+                    margin: 0;
+                    margin-bottom: 10px;
+                    color: #caeef3;
                   "
                 >
-                  2013
+                  React 的出現
                 </p>
-              </div>
-              <div style="padding: 0 30px">
-                <div style="border-left: 2px solid #70d3e0;">
-                  <p
-                    style="
-                      font-size: 28px;
-                      padding: 0;
-                      margin: 0;
-                      margin-bottom: 10px;
-                      color: #caeef3;
-                    "
-                  >
-                    React 的出現
-                  </p>
-                  <p style="font-size: 22px; padding: 0; margin: 0;">
-                    最初的靈感來自 XHP，由Facebook發布的JS library。</br>
-                    一開始，class component 的寫法是 React 的主流(舊版官方文件、歷史較久的專案)。
-                  </p>
-                </div>
-              </div>
-              <div class="fragment" style="display: flex; align-items: center">
-                <p
-                  style="
-                    border-radius: 50%;
-                    background-color: #70d3e0;
-                    width: 60px;
-                    height: 60px;
-                    text-align: center;
-                    font-size: 22px;
-                    align-items: center;
-                    line-height: 60px;
-                  "
-                >
-                  2019
+                <p style="font-size: 22px; padding: 0; margin: 0">
+                  最初的靈感來自 XHP，由Facebook發布的JS library。</br> 一開始，class
+                  component 的寫法是 React
+                  的主流(舊版官方文件、歷史較久的專案)。
                 </p>
-              </div>
-              <div class="fragment" style="padding: 0 30px">
-                <div style="border-left: 2px solid #70d3e0;">
-                  <p
-                    style="
-                      font-size: 28px;
-                      padding: 0;
-                      margin: 0;
-                      margin-bottom: 10px;
-                      color: #caeef3;
-                    "
-                  >
-                    React 16.8 (Hooks)
-                  </p>
-                  <p style="font-size: 22px; padding: 0; margin: 0;">
-                    神奇鉤子的出現，讓React使用Functional也可以管理state
-                  </p>
-                </div>
-              </div>
-              <div class="fragment" style="display: flex; align-items: center">
-                <p
-                  style="
-                    border-radius: 50%;
-                    background-color: #70d3e0;
-                    width: 60px;
-                    height: 60px;
-                    text-align: center;
-                    font-size: 22px;
-                    align-items: center;
-                    line-height: 60px;
-                  "
-                >
-                  2023
-                </p>
-              </div>
-              <div class="fragment" style="padding: 0 30px">
-                <div style="border-left: 2px solid #70d3e0;">
-                  <p
-                    style="
-                      font-size: 28px;
-                      padding: 0;
-                      margin: 0;
-                      margin-bottom: 10px;
-                      color: #caeef3;
-                    "
-                  >
-                    React 更新官方文件
-                  </p>
-                  <p style="font-size: 22px; padding: 0; margin: 0;">
-                    改為使用Functional Component作為主要介紹的方法。
-                  </p>
-                </div>
               </div>
             </div>
-          </section>
+            <div class="fragment" style="display: flex; align-items: center">
+              <p
+                style="
+                  border-radius: 50%;
+                  background-color: #70d3e0;
+                  width: 60px;
+                  height: 60px;
+                  text-align: center;
+                  font-size: 22px;
+                  align-items: center;
+                  line-height: 60px;
+                "
+              >
+                2019
+              </p>
+            </div>
+            <div class="fragment" style="padding: 0 30px">
+              <div style="border-left: 2px solid #70d3e0">
+                <p
+                  style="
+                    font-size: 28px;
+                    padding: 0;
+                    margin: 0;
+                    margin-bottom: 10px;
+                    color: #caeef3;
+                  "
+                >
+                  React 16.8 (Hooks)
+                </p>
+                <p style="font-size: 22px; padding: 0; margin: 0">
+                  神奇鉤子的出現，讓React使用Functional也可以管理state
+                </p>
+              </div>
+            </div>
+            <div class="fragment" style="display: flex; align-items: center">
+              <p
+                style="
+                  border-radius: 50%;
+                  background-color: #70d3e0;
+                  width: 60px;
+                  height: 60px;
+                  text-align: center;
+                  font-size: 22px;
+                  align-items: center;
+                  line-height: 60px;
+                "
+              >
+                2023
+              </p>
+            </div>
+            <div class="fragment" style="padding: 0 30px">
+              <div style="border-left: 2px solid #70d3e0">
+                <p
+                  style="
+                    font-size: 28px;
+                    padding: 0;
+                    margin: 0;
+                    margin-bottom: 10px;
+                    color: #caeef3;
+                  "
+                >
+                  React 更新官方文件
+                </p>
+                <p style="font-size: 22px; padding: 0; margin: 0">
+                  改為使用Functional Component作為主要介紹的方法。
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section>
-          <h3 style="font-weight: bold">React的歷史</h3>
-          <p class="fragment highlight-blue">
-            一開始，class的寫法是React的主流
-          </p>
-          <p class="fragment highlight-blue">舊版官方文件、歷史較久的專案</p>
-          <p class="fragment highlight-blue">React釋出v16.8</p>
-          <p class="fragment highlight-blue">神奇鉤子(Hooks)</p>
-          <p class="fragment highlight-blue">
-            讓React使用Functional也可以管理state
-          </p>
-          <p class="fragment highlight-blue">
-            新版官方文件，官方推薦使用functional
-          </p>
-        </section>
-
-        <section>
-          <h3 style="font-weight: bold">為什麼? Class本來就能做到呀!!!</h3>
+          <h3 style="font-weight: bold">為什麼? Class 本來就能做到呀!!!</h3>
           <ul>
-            <li class="fragment">編譯速度較快</li>
-            <li class="fragment">相依性較低</li>
-            <li class="fragment">可測試性及重用性高</li>
-            <li class="fragment">較為簡單、易於理解、降低開發成本</li>
-            <li class="fragment">更多的社群資源</li>
+            <li class="fragment" style="margin-bottom: 5px; color: #dfe2e2;">編譯速度較快</li>
+            <li class="fragment" style="margin-bottom: 5px; color: #dfe2e2;">相依性較低</li>
+            <div class="fragment fade-in-then-out" style="position: absolute; background-color: rgba(112, 211, 224, 0.7); padding: 10px; font-size: 22px; border-radius: 10px;">
+              ● Functional Component 被設計為無狀態，需要管理狀態則掛勾於 Hooks 上，因此也無需使用到 this。</br>
+              ● Class Component 可以擁有自己的狀態，並起依賴於其他元件，設計上更為複雜，需要用到 this。
+            </div>
+            <li class="fragment" style="margin-bottom: 5px; color: #dfe2e2;">可測試性及重用性高</li>
+            <div class="fragment fade-in-then-out" style="position: absolute; background-color: rgba(112, 211, 224, 0.7); padding: 10px; font-size: 22px; border-radius: 10px;">
+              ● 除了上述提到沒有自己內部狀態外，也沒有自己的狀態跟生命週期，測試更加簡易。</br>
+              ● 同時 Functional Component 常常被認為是 pure function，給相同 props，始終會回傳相同結果。這使得他更容易重用。
+            </div>
+            <li class="fragment" style="margin-bottom: 5px; color: #dfe2e2;">較為簡單、易於理解、降低開發成本</li>
+            <li class="fragment" style="color: #dfe2e2;">更多的社群資源</li>
           </ul>
         </section>
 
         <section>
-          <h3 style="font-weight: bold">Class表示：我也不是一無是處!</h3>
+          <h3 style="font-weight: bold">Class 表示：我也不是一無是處!</h3>
           <ul>
-            <li class="fragment">可能具有好的可讀性(明確的生命週期)</li>
-            <li class="fragment">可以支援舊版React</li>
-            <li class="fragment">更好的 IDE 支持</li>
+            <li class="fragment" style="margin-bottom: 10px; color: #dfe2e2;">可能具有好的可讀性</li>
+            <div class="fragment fade-in-then-out" style="position: absolute; background-color: rgba(112, 211, 224, 0.7); padding: 10px; font-size: 22px; border-radius: 10px;">
+              ● 明確的生命週期。
+            </div>
+            <li class="fragment" style="margin-bottom: 10px; color: #dfe2e2;">可以支援舊版 React</li>
+            <div class="fragment fade-in-then-out" style="position: absolute; background-color: rgba(112, 211, 224, 0.7); padding: 10px; font-size: 22px; border-radius: 10px;">
+              ● 不需要使用到新版的 Hooks API。
+            </div>
+            <li class="fragment" style="margin-bottom: 10px; color: #dfe2e2;">更好的 IDE 支持</li>
+            <div class="fragment fade-in-then-out" style="position: absolute; background-color: rgba(112, 211, 224, 0.7); padding: 10px; font-size: 22px; border-radius: 10px;">
+              ● 因為是由 JS ES6 所撰寫，在 IDE 上享有更好的提示，但現在 IDE 也都夠強了，這項優勢正在慢慢消失。
+            </div>
           </ul>
         </section>
 
         <section>
-          <h3>渲染JSX方法</h3>
+          <h3>渲染 JSX 方法</h3>
           <p>Class component:</p>
           <pre>
             <code data-trim data-noescape data-line-numbers="2-7">
               <script type="text/template">
-                import React, { Component } from "react";
+                import React from "react";
 
-                class ClassComponent extends Component { 
+                class ClassComponent extends React.Component { 
                   render() { 
                     return <div>ClassComponent</div>;
                   }
@@ -429,28 +452,28 @@
           <h3>Pure Component</h3>
           <p>在Class Component中</p>
           <p>
-            繼承的Component通過shouldComponentUpdate來判斷是否需要re-render。
+            繼承的 Component 通過 shouldComponentUpdate 來判斷是否需要 re-render。
           </p>
-          <p>如果return true，component將會重新渲染。</p>
-          <p>默認情況皆是true!!!效能不佳</p>
+          <p>如果 return true，component 將會重新渲染。</p>
+          <p>默認情況皆是 true!!!效能不佳</p>
           <p>
             Pure
-            Component實現在shouldComponentUpdate時，透過淺層比較來判斷是否需要重新渲染
+            Component 實現在 shouldComponentUpdate 時，透過淺層比較來判斷是否需要重新渲染
           </p>
-          <p>有效減少無意義的re-render</p>
+          <p>有效減少無意義的 re-render</p>
         </section>
 
         <section>
           <h3>Pure Component</h3>
-          <p>在Functional Component中</p>
-          <p>因沒有辦法extends PureComponent，會透過memo來達到一樣的效果。</p>
+          <p>在 Functional Component中</p>
+          <p>因沒有辦法 extends PureComponent，會透過 memo 來達到一樣的效果。</p>
         </section>
 
         <section>
           <h4 style="font-weight: bold">生命週期</h4>
           <p>Functional component:</p>
           <p style="font-size: 22px; color: beige">
-            沒有生命週期，由Hooks所代替
+            沒有生命週期，由 Hooks 所代替
           </p>
           <p>Class component:</p>
           <img src="https://i.imgur.com/Ib5gpFY.jpg" />
@@ -529,9 +552,7 @@
           </pre>
         </section>
 
-        <section>
-          <img src="./compare.jpg" alt="" />
-        </section>
+        <section data-background="./compare.jpg"></section>
 
         <section>
           <h3>撰寫上遇到的問題</h3>
