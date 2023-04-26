@@ -23,6 +23,7 @@
 
       ::-webkit-scrollbar {
         width: 6px;
+        height: 10px;
         background-color: black;
       }
 
@@ -150,10 +151,19 @@
         </section>
 
         <section>
-          <p>CRA專案結構</p>
-          <p style="position: absolute; z-index: 1; background-color: rgba(112, 211, 224, 0.7); padding: 5px 10px; font-size: 22px;">
-            看不到webpack.config檔案!它放在 node_modules/react-scripts 底下。
+          <p>CRA 專案結構</p>
+          <p style="font-size: 30px; text-align: start;">
+            ● 看不到 webpack.config 檔案!它放在 node_modules/react-scripts 底下。
           </p>
+          <pre style="padding: 5px 10px; font-size: 22px;">
+            <code data-trim data-noescape data-line-numbers="2-7">
+              <script type="text/template">
+                npm install react-app-rewired
+              </script>
+            </code>
+          </pre>
+          <p class="fragment" style="position: absolute; font-size: 26px; background-color: #70d3e0; padding: 10px; border-radius: 10px;">不用手動調整 react-scripts 套件就可以調整 Webpack 設定</p>
+          
           <img src="https://i.imgur.com/995yHA2.png" alt="">
         </section>
 
@@ -623,6 +633,7 @@
                   }
                   getSonName() {
                     alert('My name is Eric!');
+                    alert(`${this.name} is Boy!`); // 未來某一天想增加的code
                   }
                 }
               </code>
@@ -631,25 +642,42 @@
         </section>
 
         <section>
-          <h3>為什麼要帶入props?</h3>
-          <p>
-            帶入props到super是必須的，因為底層的React.Component建構子才能初始化this.props?
+          <p>如果不帶入 props?</p>
+          <p style="text-align: start; font-size: 30px;">
+            ● 帶入 props 到 super 是必須的？因為底層的 React.Component 建構子才能初始化 this.props?
           </p>
-          <p class="fragment">測時結果，竟然可以讀取到this.props!!!</p>
-          <p class="fragment">
-            事實上 在 React 呼叫你的建構子後，它也會馬上配置 props 到實例中
+          <pre class="fragment">
+            <code data-trim data-noescape>
+              <script type="text/template">
+                class Score extends Component {
+                  render() {
+                    return ( <div>{`獲得蘋果： ${this.props.score}`}</div>);
+                  }
+                }
+              </script>
+            </code>
+          </pre>
+          <p class="fragment" style="text-align: start; font-size: 30px;">● 結果，竟然可以讀取到 this.props!!!</p>
+          <p class="fragment" style="text-align: start; font-size: 30px;">
+            ● 事實上在 React 呼叫你的建構子後，它也會馬上配置 props 到實例中
           </p>
-          <p class="fragment">React 刻意設計的~</p>
+          <pre class="fragment">
+            <code data-trim data-noescape >
+              const instance = new MyComponent(props);
+              instance.props = props;
+            </code>
+          </pre>
+          <p class="fragment" style="text-align: start; font-size: 30px;">● React 刻意設計的~</p>
         </section>
 
         <section>
-          <h3>可以只寫 super() 而不用寫 super(props) 嗎？</h3>
-          <p class="fragment">NO!!</p>
-          <p class="fragment">
-            React 的確會在你的建構子執行之後自行配置 this.props
+          <p>只寫 super() 而不用寫 super(props)?</p>
+          <p class="fragment" style="text-align: start; font-size: 30px; font-weight: bold; color: #70d3e0;">● NO!!</p>
+          <p class="fragment" style="text-align: start; font-size: 30px;">
+            ● React 的確會在你的建構子執行之後自行配置 this.props
           </p>
-          <p class="fragment">
-            但是 this.props 從呼叫 super 到建構子的結尾仍然會是undefined
+          <p class="fragment" style="text-align: start; font-size: 30px;">
+            ● 但是 this.props 從呼叫 super 到建構子的結尾仍然會是 undefined
           </p>
           <pre class="fragment">
             <code data-trim data-noescape >
@@ -663,10 +691,93 @@
 
         <section>
           <h3>Side Project</h3>
-          <p>nodejs: v16.20</p>
-          <p>React: v18.2 (Functional Component)</p>
+          <p style="text-align: start; font-weight: bold;">● nodejs: v18</p>
+          <p style="text-align: start; font-weight: bold;">● React: v18.2 (Functional Component)</p>
+          <p style="text-align: start; font-weight: bold;">● 玩法：<span style="color: #a8e6ee;">透過上下左右控制貪吃蛇，吃到蘋果會越跑越快，撞到自己身體就輸了，按下空白鍵可以暫停。</span></p>
+        </section>
+
+        <section>
+          <p>任務拆解</p>
+          <p style="text-align: start;">● 出現在地圖上的蛇</p>
+          <pre class="fragment fade-in-then-out" style="position: absolute;">
+            <code data-trim data-noescape>
+              <script type="text/template">
+                const [snake, setSnake] = useState(defaultSnake);
+                useEffect(() => {
+                  const gameIntervalId = setInterval(() => {
+                    setSnake((prevSnake) => {
+                      // ...計算蛇怎麼移動
+                      return {
+                        // ...蛇的新位置
+                      };
+                    });
+                  }, snake.speed);
+                  return () => {
+                    clearInterval(gameIntervalId);
+                  };
+                }, [snake.speed, isStart, isPause]);
+              </script>
+            </code>
+          </pre>
+          <pre class="fragment fade-in-then-out" style="position: absolute;">
+            <code data-trim data-noescape>
+              <script type="text/template">
+                const isSnake = [head, ...body].find(
+                  (item) => item.x === column && item.y === row
+                );
+                background: isSnake ? "#ffffff" : "#161616"
+              </script>
+            </code>
+          </pre>
+          <p class="fragment" style="text-align: start;">● 隨機出現的蘋果</p>
+          <pre class="fragment fade-in-then-out" style="position: absolute;">
+            <code data-trim data-noescape>
+              <script type="text/template">
+                export const createFood = () => ({
+                  x: Math.floor(Math.random() * GRID_SIZE),
+                  y: Math.floor(Math.random() * GRID_SIZE),
+                });
+
+                const [food, setFood] = useState(() => createFood());
+                setFood(createFood());
+              </script>
+            </code>
+          </pre>
+          <p class="fragment" style="text-align: start;">● 吃到蘋果會長大的蛇，並且越跑越快</p>
+          <pre class="fragment fade-in-then-out" style="position: absolute;">
+            <code data-trim data-noescape>
+              <script type="text/template">
+                const [snake, setSnake] = useState(defaultSnake);
+                setSnake((snake) => ({
+                  ...snake,
+                  curLength: snake.curLength + 1,
+                  speed: Math.max(snake.speed - DELTA_SPEED, LIMITED_SPEED),
+                }));
+              </script>
+            </code>
+          </pre>
+          <p class="fragment" style="text-align: start;">● 計算分數，存到 localstorage</p>
+          <pre class="fragment fade-in-then-out" style="position: absolute;">
+            <code data-trim data-noescape>
+              <script type="text/template">
+                const [score, setScore] = useState(0);
+                useEffect(() => {
+                  if (isGameOver) {
+                    setIsStart(false);
+                    if (score > maxScore) {
+                      localStorage.setItem("maxScore", score);
+                    }
+                  }
+                }, [isGameOver]);
+              </script>
+            </code>
+          </pre>
+        </section>
+
+        <section>
           <a href="https://mordern123.github.io/snake/">Go to the Snake Game</a>
         </section>
+
       </div>
     </div>
 
