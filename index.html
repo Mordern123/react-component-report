@@ -162,7 +162,7 @@
               </script>
             </code>
           </pre>
-          <p class="fragment" style="position: absolute; font-size: 26px; background-color: #70d3e0; padding: 10px; border-radius: 10px;">不用手動調整 react-scripts 套件就可以調整 Webpack 設定，針對CRA的設定做改寫的套件</p>
+          <p class="fragment" style="position: absolute; font-size: 26px; background-color: #70d3e0; padding: 10px; border-radius: 10px; top: 400px">不用手動調整 react-scripts 套件就可以調整 Webpack 設定，針對CRA的設定做改寫的套件</p>
           
           <img src="https://i.imgur.com/995yHA2.png" alt="">
         </section>
@@ -493,7 +493,7 @@
           <p>在 Functional Component中</p>
           <p style="text-align: start; font-size: 28px;">因沒有 extends PureComponent，會透過 <span style="font-weight: bold;  color: #97e5f0;">memo</span> 來達到一樣的效果。</p>
           <div class="fragment fade-in-then-out" style="position: absolute; background-color: rgba(112, 211, 224, 0.7); padding: 10px 20px; font-size: 22px; border-radius: 10px; text-align: start;">
-            ● React.memo 是 React 的 <span style="font-weight: bold;  color: #eec882;">HOC</span>，它可以將函數元件包裝起來，並起回傳一個新的元件。</br>
+            ● React.memo 是 React 的 <span style="font-weight: bold;  color: #eec882;">Higher-Order Component(HOC)</span>，它可以將函數元件包裝起來，並起回傳一個新的元件。</br>
             ● 這個新元件就會在接收到 props 時，去比較新舊 props 是否有更新，如果沒更新則不會做 re-render 的行為。</br>
             ● 避免不必要的渲染，提高性能。
           </div>
